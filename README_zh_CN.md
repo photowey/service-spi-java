@@ -80,3 +80,19 @@ public class HelloWorldTestSPI implements TestSPI {
     }
 }
 ```
+
+## `Load Service`
+
+```java
+class ExtensionFactoryTest {
+
+    @Test
+    public void testCreateSPI() {
+        TestSPI testSPI = ExtensionFactory.create(TestSPI.class);
+        Assertions.assertNotNull(testSPI);
+
+        TestSPI testSPI2 = ExtensionFactory.create(TestSPI.class);
+        Assertions.assertEquals(testSPI.hashCode(), testSPI2.hashCode());
+    }
+}
+```
